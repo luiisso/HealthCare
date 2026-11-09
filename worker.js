@@ -1,7 +1,7 @@
 // Cloudflare Worker (plan gratuito): guarda la clave en secreto y llama a la API gratuita de Google Gemini
 export default {
   async fetch(req, env) {
-    const allowed = env.ALLOWED_ORIGIN || "*";
+    const allowed = env.ALLOWED_ORIGIN || "https://luiisso.github.io";
     const cors = {"Access-Control-Allow-Origin": allowed, "Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type"};
     const out = (o, s = 200) => new Response(JSON.stringify(o), {status: s, headers: {...cors, "Content-Type": "application/json"}});
     if (req.method === "OPTIONS") return new Response(null, {headers: cors});
