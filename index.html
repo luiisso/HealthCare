@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mi Programa de Peso</title><link rel="stylesheet" href="estilos.css"></head><body>
+<header><h1>🥗 Mi Programa de Peso</h1><p>Calcula tus calorías, fotografía tus comidas y recibe consejos</p></header>
+<main>
+<section class="card"><h2>1. Tus datos</h2><div class="grid">
+<div><label>Sexo</label><select id="sexo"><option value="h">Hombre</option><option value="m">Mujer</option></select></div>
+<div><label>Edad</label><input type="number" id="edad" placeholder="30"></div>
+<div><label>Peso (kg)</label><input type="number" id="peso" placeholder="75"></div>
+<div><label>Altura (cm)</label><input type="number" id="altura" placeholder="175"></div>
+<div><label>Actividad</label><select id="actividad"><option value="1.2">Sedentaria</option><option value="1.375">Ligera</option><option value="1.55" selected>Moderada</option><option value="1.725">Alta</option></select></div>
+<div><label>Objetivo</label><select id="objetivo"><option value="perder">Perder peso</option><option value="ganar">Ganar músculo</option><option value="mantener">Mantener</option></select></div>
+</div><button id="btnCalc">Calcular mi plan</button></section>
+<section class="card hidden" id="resultados"><h2>2. Tu plan diario</h2><div class="big" id="kcal"></div><p id="detalle"></p>
+<div class="macros"><div><b id="mP"></b>Proteínas</div><div><b id="mC"></b>Carbohidratos</div><div><b id="mG"></b>Grasas</div></div>
+<h3>Comidas recomendadas</h3><ul id="comidas"></ul></section>
+<section class="card"><h2>3. Fotografía tu comida 📸</h2><div class="motiv" id="motiv"></div>
+<input type="file" id="foto" accept="image/*" capture="environment" class="hidden">
+<button id="btnFoto">📷 Hacer foto de mi comida</button><img id="prev" class="hidden" alt="">
+<div id="resFoto" class="hidden"></div><p>Hoy: <b id="total">0</b> kcal</p></section>
+<section class="card"><h2>4. Sube tus analíticas 🩺</h2><p>PDF o imagen (sangre, grasa corporal) para consejos más específicos.</p>
+<input type="file" id="anal" accept=".pdf,image/*"><label class="chk"><input type="checkbox" id="ok"> Acepto que se procesen mis datos de salud para personalizar mi plan.</label>
+<button id="btnAnal">Analizar archivo</button><div id="resAnal" class="hidden"></div></section>
+</main><p class="aviso">Orientativo. No sustituye a un médico o dietista.</p><script src="app.js"></script></body></html>
