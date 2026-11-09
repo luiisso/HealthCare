@@ -1,27 +1,29 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mi Programa de Peso</title><link rel="stylesheet" href="estilos.css"></head><body>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#2e8b6e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><link rel="manifest" href="manifest.json"><title>FitVerde</title><link rel="stylesheet" href="estilos.css"></head><body>
 <div id="modal" class="modal hidden"><div class="mbox"><div class="mem">💪</div><p id="modalTxt"></p><button id="modalBtn">¡Empezar!</button></div></div>
-<header><h1>🥗 Mi Programa de Peso</h1><p>Calcula tus calorías, fotografía tus comidas y recibe consejos</p></header>
+<header><h1>🥗 FitVerde</h1><span id="demo" class="badge hidden">Demo: resultado de ejemplo</span></header>
 <main>
-<section class="card"><h2>1. Tus datos</h2><div class="grid">
-<div><label>Sexo</label><select id="sexo"><option value="h">Hombre</option><option value="m">Mujer</option></select></div>
-<div><label>Edad</label><input type="number" id="edad" placeholder="30"></div>
-<div><label>Peso (kg)</label><input type="number" id="peso" placeholder="75"></div>
-<div><label>Altura (cm)</label><input type="number" id="altura" placeholder="175"></div>
-<div><label>Actividad</label><select id="actividad"><option value="1.2">Sedentaria</option><option value="1.375">Ligera</option><option value="1.55" selected>Moderada</option><option value="1.725">Alta</option></select></div>
-<div><label>Objetivo</label><select id="objetivo"><option value="perder">Perder peso</option><option value="ganar">Ganar músculo</option><option value="mantener">Mantener</option></select></div>
-</div><button id="btnCalc">Calcular mi plan</button></section>
-<section class="card hidden" id="resultados"><h2>2. Tu plan diario</h2><div class="big" id="kcal"></div><p id="detalle"></p>
-<div class="macros"><div><b id="mP"></b>Proteínas</div><div><b id="mC"></b>Carbohidratos</div><div><b id="mG"></b>Grasas</div></div>
-<h3>Comidas recomendadas</h3><ul id="comidas"></ul></section>
-<section class="card"><h2>3. Tus gustos y recetas 🍽️</h2><p>Marca lo que te gusta comer y te propondremos recetas según tu objetivo.</p>
-<div id="gustos" class="chips"></div><h3>Recetas para ti</h3><div id="recetas" class="recs"></div><div id="detalle-rec" class="hidden"></div></section>
-<section class="card"><h2>4. Fotografía tu comida 📸</h2><div class="motiv" id="motiv"></div>
-<input type="file" id="foto" accept="image/*" capture="environment" class="hidden">
-<button id="btnFoto">📷 Hacer foto de mi comida</button><img id="prev" class="hidden" alt="">
-<div id="resFoto" class="hidden"></div><p>Hoy: <b id="total">0</b> kcal</p></section>
-<section class="card"><h2>5. Sube tus analíticas 🩺</h2><p>PDF o imagen (sangre, grasa corporal) para consejos más específicos.</p>
-<input type="file" id="anal" accept=".pdf,image/*"><label class="chk"><input type="checkbox" id="ok"> Acepto que se procesen mis datos de salud para personalizar mi plan. Aviso: en el plan gratuito Google puede usar estos datos para mejorar sus productos; no subas nombre ni DNI.</label>
-<button id="btnAnal">Analizar archivo</button><div id="resAnal" class="hidden"></div></section>
-<section class="card"><h2>6. Ejercicios de gimnasio 🏋️</h2><div id="grupos" class="chips"></div><p id="notaEj"></p><ul id="ejs"></ul>
-<p class="aviso">Calienta 5-10 min antes y cuida la técnica. Si tienes alguna lesión o condición de salud, consulta antes con un profesional.</p></section>
-</main><p class="aviso">Orientativo. No sustituye a un médico o dietista.</p><script src="app.js"></script></body></html>
+<section id="pg-inicio" class="pg on"><div class="card"><h2>Tu perfil</h2><div class="grid">
+<div><label for="sexo">Sexo</label><select id="sexo"><option value="h">Hombre</option><option value="m">Mujer</option></select></div>
+<div><label for="edad">Edad</label><input type="number" id="edad" placeholder="30"></div>
+<div><label for="peso">Peso (kg)</label><input type="number" id="peso" placeholder="75"></div>
+<div><label for="altura">Altura (cm)</label><input type="number" id="altura" placeholder="175"></div>
+<div><label for="actividad">Actividad</label><select id="actividad"><option value="1.2">Sedentaria</option><option value="1.375">Ligera</option><option value="1.55" selected>Moderada</option><option value="1.725">Alta</option></select></div>
+<div><label for="objetivo">Objetivo</label><select id="objetivo"><option value="perder">Perder peso</option><option value="ganar">Ganar músculo</option><option value="mantener">Mantener</option></select></div></div>
+<button id="btnCalc">Calcular mi plan</button></div>
+<div class="card hidden" id="resultados"><h2>Tu plan diario</h2><div class="big" id="kcal"></div><p id="detalle"></p><p id="nota" class="warn"></p>
+<div class="macros"><div><b id="mP"></b>Proteínas<i><u id="bP"></u></i></div><div><b id="mC"></b>Carbohidratos<i><u id="bC"></u></i></div><div><b id="mG"></b>Grasas<i><u id="bG"></u></i></div></div></div></section>
+<section id="pg-comidas" class="pg"><div class="card"><h2>Tus gustos</h2><label for="dieta">Tipo de dieta</label><select id="dieta"><option value="">Sin restricciones</option><option value="vegetariana">Vegetariana</option><option value="vegana">Vegana</option></select>
+<div id="gustos" class="chips"></div></div><div class="card"><h2>Recetas para ti</h2><div id="recetas" class="recs"></div><div id="detalle-rec" class="hidden"></div></div></section>
+<section id="pg-camara" class="pg"><div class="card center"><svg viewBox="0 0 120 120" class="ring"><circle cx="60" cy="60" r="52" class="rb"/><circle id="anillo" cx="60" cy="60" r="52" class="rf"/></svg><div class="big" id="total">0</div><p id="resta"></p></div>
+<div class="card"><h2>Fotografía tu comida 📸</h2><div class="motiv" id="motiv"></div><input type="file" id="foto" accept="image/*" capture="environment" class="hidden"><button id="btnFoto">📷 Hacer foto de mi comida</button><img id="prev" class="hidden" alt="Tu plato"><div id="resFoto"></div></div>
+<div class="card"><h2>Diario de hoy</h2><ul id="lista" class="lst"></ul></div></section>
+<section id="pg-ejercicio" class="pg"><div class="card"><h2>Ejercicios de gimnasio 🏋️</h2><div id="grupos" class="chips"></div><p id="notaEj"></p><ul id="ejs" class="lst"></ul></div>
+<div class="card"><h2>Rutina semanal sugerida</h2><ul id="rutina" class="lst"></ul><p class="legal">Calienta 5-10 min antes y cuida la técnica. Si tienes una lesión o condición de salud, consulta antes con un profesional.</p></div></section>
+<section id="pg-progreso" class="pg"><div class="card"><h2>Tu peso</h2><div class="row"><input type="number" id="pesoN" placeholder="Peso de hoy (kg)" aria-label="Peso de hoy"><button id="btnPeso">Guardar</button></div><div id="graf"></div></div>
+<div class="card"><h2>Analíticas 🩺</h2><p>PDF o imagen (sangre, grasa corporal). Se resumen sin diagnosticar y personalizan los consejos de la cámara.</p><input type="file" id="anal" accept=".pdf,image/*" aria-label="Archivo de analítica">
+<label class="chk"><input type="checkbox" id="ok"> Acepto que se procesen mis datos de salud. Aviso: en el plan gratuito Google puede usar estos datos para mejorar sus productos; no subas nombre ni DNI.</label>
+<button id="btnAnal">Analizar archivo</button><div id="resAnal"></div></div>
+<div class="card"><h2>Mis datos</h2><p>Todo se guarda solo en este móvil.</p><button id="btnBorrar" class="danger">Borrar todos mis datos</button></div></section>
+<p class="legal">Web orientativa: no sustituye a un médico o dietista. Consulta con un profesional antes de cambiar tu alimentación o rutina.</p></main>
+<nav id="nav"><button data-t="inicio" class="on">🏠<span>Inicio</span></button><button data-t="comidas">🍽️<span>Comidas</span></button><button data-t="camara">📸<span>Cámara</span></button><button data-t="ejercicio">🏋️<span>Ejercicio</span></button><button data-t="progreso">📈<span>Progreso</span></button></nav>
+<div id="toast"></div><script src="app.js"></script></body></html>
