@@ -1,5 +1,5 @@
 // 1) Pon aquí la URL de tu Worker de Cloudflare (ver README). Si no la cambias, la web funciona en MODO DEMO.
-const API_URL="https://TU-WORKER.workers.dev";
+const API_URL="https://fitverde.luiisso77.workers.dev";
 const DEMO=API_URL.includes("TU-WORKER");
 const $=id=>document.getElementById(id);
 const e=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
