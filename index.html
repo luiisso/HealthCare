@@ -1,4 +1,5 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mi Programa de Peso</title><link rel="stylesheet" href="estilos.css"></head><body>
+<div id="modal" class="modal hidden"><div class="mbox"><div class="mem">💪</div><p id="modalTxt"></p><button id="modalBtn">¡Empezar!</button></div></div>
 <header><h1>🥗 Mi Programa de Peso</h1><p>Calcula tus calorías, fotografía tus comidas y recibe consejos</p></header>
 <main>
 <section class="card"><h2>1. Tus datos</h2><div class="grid">
@@ -12,11 +13,15 @@
 <section class="card hidden" id="resultados"><h2>2. Tu plan diario</h2><div class="big" id="kcal"></div><p id="detalle"></p>
 <div class="macros"><div><b id="mP"></b>Proteínas</div><div><b id="mC"></b>Carbohidratos</div><div><b id="mG"></b>Grasas</div></div>
 <h3>Comidas recomendadas</h3><ul id="comidas"></ul></section>
-<section class="card"><h2>3. Fotografía tu comida 📸</h2><div class="motiv" id="motiv"></div>
+<section class="card"><h2>3. Tus gustos y recetas 🍽️</h2><p>Marca lo que te gusta comer y te propondremos recetas según tu objetivo.</p>
+<div id="gustos" class="chips"></div><h3>Recetas para ti</h3><div id="recetas" class="recs"></div><div id="detalle-rec" class="hidden"></div></section>
+<section class="card"><h2>4. Fotografía tu comida 📸</h2><div class="motiv" id="motiv"></div>
 <input type="file" id="foto" accept="image/*" capture="environment" class="hidden">
 <button id="btnFoto">📷 Hacer foto de mi comida</button><img id="prev" class="hidden" alt="">
 <div id="resFoto" class="hidden"></div><p>Hoy: <b id="total">0</b> kcal</p></section>
-<section class="card"><h2>4. Sube tus analíticas 🩺</h2><p>PDF o imagen (sangre, grasa corporal) para consejos más específicos.</p>
-<input type="file" id="anal" accept=".pdf,image/*"><label class="chk"><input type="checkbox" id="ok"> Acepto que se procesen mis datos de salud para personalizar mi plan.</label>
+<section class="card"><h2>5. Sube tus analíticas 🩺</h2><p>PDF o imagen (sangre, grasa corporal) para consejos más específicos.</p>
+<input type="file" id="anal" accept=".pdf,image/*"><label class="chk"><input type="checkbox" id="ok"> Acepto que se procesen mis datos de salud para personalizar mi plan. Aviso: en el plan gratuito Google puede usar estos datos para mejorar sus productos; no subas nombre ni DNI.</label>
 <button id="btnAnal">Analizar archivo</button><div id="resAnal" class="hidden"></div></section>
+<section class="card"><h2>6. Ejercicios de gimnasio 🏋️</h2><div id="grupos" class="chips"></div><p id="notaEj"></p><ul id="ejs"></ul>
+<p class="aviso">Calienta 5-10 min antes y cuida la técnica. Si tienes alguna lesión o condición de salud, consulta antes con un profesional.</p></section>
 </main><p class="aviso">Orientativo. No sustituye a un médico o dietista.</p><script src="app.js"></script></body></html>
